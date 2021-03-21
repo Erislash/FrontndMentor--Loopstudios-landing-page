@@ -1,0 +1,71 @@
+header{
+    position: relative;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 100vh;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.753), rgba(0, 0, 0, 0.411)), url('../images/mobile/image-hero.jpg');
+    background-position: center center;
+    background-size: cover;
+
+    @media (min-width: 768px) {
+        background: linear-gradient(to right, rgba(0, 0, 0, 0.753), rgba(0, 0, 0, 0.411)), url('../images/desktop/image-hero.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        min-height: auto;
+        padding: 3rem 6rem 0 6rem;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+.head{ 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 2.5rem 2rem;
+    width: 100%;
+
+    .logo {
+        position: relative;
+        z-index: 10;
+        width: 50%;
+        max-width: 200px;
+
+        img{
+            width: 100%;
+        }
+    }
+    @import 'menu';
+
+
+    @media (min-width: 768px) {
+        position: relative;
+        padding: 0;
+    }
+}
+
+.motto {
+    font-family: 'Josefin Sans', Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-weight: 100;
+    color: #f2f2f2;
+    border: 2px solid #f2f2f2;
+    width: 90%;
+    max-width: 300px;
+    padding: 1rem;
+    line-height: 1;
+
+    @media (min-width: 768px) {
+        padding: 2rem;
+        font-size: 4rem;
+        margin: 8rem 0;
+        max-width: 600px;
+    }
+}

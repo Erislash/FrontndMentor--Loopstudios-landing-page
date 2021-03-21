@@ -1,0 +1,31 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    //Family: [Alata](https://fonts.google.com/specimen/Alata)
+    //Weight: 400
+    @import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+
+    //Family: [Josefin Sans](https://fonts.google.com/specimen/Josefin+Sans)
+    //Weight: 300
+    @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;300&display=swap');
+}
+
+body{
+    background-color: #f3f3f3;
+    font-size: 15px;
+    font-family: Alata, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+a{
+    text-decoration: none;
+}
+
+ul{
+    list-style: none
+}
+
+
+@import 'header';
