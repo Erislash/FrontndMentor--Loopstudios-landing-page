@@ -1,9 +1,12 @@
 .menu {
     .hamburgerBtn{
+        position: relative;
+        z-index: 100;
         border: none;
         outline: none;
-        background: none;
+        background: transparent;
         padding: 1rem;
+        
 
         .hamburger {
             $hamburgerLinesWidth: 30px;
