@@ -91,62 +91,143 @@
     grid-template-columns: 1fr;
     grid-template-rows: repeat(3, auto);
 
+    @media (min-width: 768px) {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(2, auto);
+    }
+
     &__title {
         grid-column: 1/2;
         grid-row: 1/2;
+
+        
+
         text-align: center;
         font-size: 2rem;
         font-weight: 400;
         text-transform: uppercase;
         font-family: 'Josefin Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         margin-bottom: 1.5rem;
+
+        @media (min-width: 768px) {
+            grid-column: 1/2;
+            grid-row: 1/2;
+            justify-self: flex-start;
+            align-self: flex-start;
+            margin-bottom: 4rem;
+            font-size: 2.5rem;
+        }
     }
 
     &__seeAllBtn {
         grid-column: 1/2;
         grid-row: 3/4;
 
+        
+
         margin: 1rem auto;
         width: 80%;
         max-width: 100px;
-        border: 2px solid $VeryDarkGray;
+        border: 2px solid #000;
         font-family: Alata, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         text-transform: uppercase;
         background-color: #fff;
         padding: .5rem 1rem;
         letter-spacing: 2px;
+
+        @media (min-width: 768px) {
+            grid-column: 2/3;
+            grid-row: 1/2;
+            justify-self: flex-end;
+            align-self: flex-start;
+            margin: 0;
+
+            transition: all .3s ease;
+            cursor: pointer;
+            &:hover {
+                background-color: #000;
+                color: #fff;
+            }
+        }
     }
 
     &__creationsCards {
         grid-column: 1/2;
         grid-row: 2/3;
 
+        
+
         width: 100%;
 
         .card{
+            position: relative;
             display: flex;
             justify-content: flex-start;
             align-items: center;
+            cursor: pointer;
 
             margin-bottom: 1rem;
+
+            img, h3 {
+                transition: all .3s ease;
+            }
+
             img {
                 width: 100%;
                 vertical-align: bottom;
                 object-fit: cover;
+                
             }
 
             h3 {
                 position: absolute;
-                transform: translate(1rem, .5rem);
                 max-width: 100px;
-                
+                transform: translate(5%, 1rem);
 
                 font-size: 1.2rem;
                 font-weight: 400;
                 text-transform: uppercase;
                 font-family: 'Josefin Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
                 color: #fff;
+
+                @media (min-width: 768px) {
+                    bottom: 20%;
+                    font-size: 2rem;
+                    transform: translate(5%, 2rem);
+                    max-width: 200px;
+                }
             }
+
+            @media (min-width: 768px) {
+                &:hover {
+                    
+                    img {
+                        
+                        opacity: .6;
+                    }
+                    h3{
+                        color: #000;
+                    }
+
+                }
+            }
+        }
+
+
+
+        @media (min-width: 768px) {
+            grid-column: 1/3;
+            grid-row: 2/3;
+
+            display: grid;
+            grid-gap: 2rem;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+
+            .card{
+                margin: 0;
+            }
+            
         }
     }
 

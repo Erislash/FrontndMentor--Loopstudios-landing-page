@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', StartApp);
 
 function StartApp() {
     const hamBtn = document.querySelector('#hamBtn');
-    const aboutImg = document.querySelector('#aboutImg');
     
 
     hamBtn.addEventListener('click', activateNavMenu);
@@ -16,11 +15,17 @@ function StartApp() {
 }
 
 function activateNavMenu(){
+    const head = document.querySelector('#head');
     const hamburguer = document.querySelector('#hamburguer');
     const navigator = document.querySelector('#navigator');
 
+    
     hamburguer.classList.toggle('active');
     navigator.classList.toggle('active');
+
+    setTimeout(() => {
+        head.classList.toggle('active');
+    }, 100);
 }
 
 function resize() {
@@ -28,8 +33,28 @@ function resize() {
     const aboutImg = document.querySelector('#aboutImg');
     const aboutText = document.querySelector('#aboutText');
 
+    let imagesPath = './images/desktop/';
+
+
+    const images = {
+        deepEarth: [document.querySelector('#deepEarth'), 'image-deep-earth.jpg'],
+        arcadeImg: [document.querySelector('#arcadeImg'), 'image-night-arcade.jpg'],
+        soccerImg: [document.querySelector('#soccerImg'), 'image-soccer-team.jpg'],
+        racingImg: [document.querySelector('#racingImg'), 'image-grid.jpg'],
+        roadImg: [document.querySelector('#roadImg'), 'image-from-above.jpg'],
+        auroraImg: [document.querySelector('#auroraImg'), 'image-pocket-borealis.jpg'],
+        curiosityImg: [document.querySelector('#curiosityImg'), 'image-curiosity.jpg'],
+        fishEyeImg: [document.querySelector('#fishEyeImg'), 'image-fisheye.jpg']
+    }
+
     if (window.innerWidth >= 768){
-        document.querySelector('#aboutImg').src = './images/desktop/image-interactive.jpg';
+        imagesPath = './images/desktop/';
+        aboutImg.src = imagesPath + 'image-interactive.jpg';
+
+        for(let image in images) {
+            images[image][0].src = imagesPath + images[image][1];
+        }
+
     
         const putInPlace = () => {
             aboutText.style.transform = `translate(${parseFloat(getComputedStyle(aboutImg).width) / 1.3}px, ${parseFloat(getComputedStyle(aboutImg).height) / 2}px)`;
@@ -49,10 +74,15 @@ function resize() {
 
     }
     else{
+        imagesPath = './images/mobile/';
+        for(let image in images) {
+            images[image][0].src = imagesPath + images[image][1];
+        }
+
         about.removeAttribute("style");
         aboutImg.removeAttribute("style");
         aboutText.removeAttribute("style");
-        document.querySelector('#aboutImg').src = './images/mobile/image-interactive.jpg';
+        aboutImg.src = imagesPath + 'image-interactive.jpg';
     }
 
 

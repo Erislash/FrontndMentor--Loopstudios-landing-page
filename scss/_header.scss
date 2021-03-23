@@ -43,6 +43,10 @@ header{
     }
     @import 'menu';
 
+    transition: all .3s ease;
+    &.active{
+        position: fixed;
+    }
 
     @media (min-width: 768px) {
         position: relative;
