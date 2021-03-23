@@ -1,4 +1,6 @@
 .main{
+    width: 100%;
+    overflow-x: hidden;
     padding: 6rem 2rem;
     @media (min-width: 768px) {
         padding: 6rem 6rem;
@@ -12,6 +14,7 @@
     position: relative;
     width: 100%;
     margin-bottom: 6rem;
+    
 
     &__img {
         width: 100%;
@@ -25,6 +28,7 @@
     &__text {
         margin-top: 1rem;
         padding: 1rem;
+        transform: translate(0px, 0px);
     }
 
     &__title{
@@ -47,6 +51,7 @@
     @media (min-width: 768px) {
         flex-direction: row;
         align-items: flex-start;
+        justify-content: flex-start;
 
         &__img {
             position: relative;
@@ -59,14 +64,15 @@
         }
 
         &__text {
+            margin: 0;
             position: absolute;
-            bottom: 20%;
-            left: 50%;
+            top: 0;
+            left: 0;
             padding: 3rem;
             background-color: #fff;
-            width: 70%;
-            max-width: 500px;
-            transform: translate(10%, 50%);
+            width: 60%;
+            max-width: 600px;
+            
         }
         &__title{
             text-align: left;
@@ -76,6 +82,7 @@
         &__paragraph{
             text-align: left;
         }
+
     }
 }
 
