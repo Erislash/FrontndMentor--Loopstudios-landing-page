@@ -281,7 +281,7 @@ header {
 
 @media (min-width: 768px) {
   .main {
-    padding: 6rem 6rem;
+    padding: 8rem 6rem;
   }
 }
 
@@ -349,7 +349,7 @@ header {
   }
   .about__img {
     position: relative;
-    width: 70%;
+    width: 60%;
     max-width: 1000px;
   }
   .about__img img {
@@ -369,9 +369,23 @@ header {
   }
   .about__title {
     text-align: left;
+    font-size: 1.5rem;
   }
   .about__paragraph {
     text-align: left;
+    font-size: .7rem;
+  }
+}
+
+@media (min-width: 1168px) {
+  .about__text {
+    padding: 6rem;
+  }
+  .about__title {
+    font-size: 3rem;
+  }
+  .about__paragraph {
+    font-size: 1rem;
   }
 }
 
@@ -575,9 +589,10 @@ header {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 2rem 6rem;
   }
 }
 
